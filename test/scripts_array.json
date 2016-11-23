@@ -1,0 +1,52 @@
+{
+	"tagName": "html",
+	"attributes": {
+		"lang": "en"
+	},
+	"childNodes": [
+		{
+			"tagName": "head",
+			"childNodes": [
+				{
+					"tagName": "meta",
+					"attributes": {
+						"charset": "utf-8"
+					}
+				},
+				{
+					"tagName": "meta",
+					"attributes": {
+						"content": "ie=edge",
+						"http-equiv": "x-ua-compatible"
+					}
+				},
+				{
+					"tagName": "meta",
+					"attributes": {
+						"name": "viewport",
+						"content": "width=device-width, initial-scale=1, shrink-to-fit=no"
+					}
+				}
+			]
+		},
+		{
+			"tagName": "body",
+			"childNodes": [
+				{
+					"tagName": "script",
+					"attributes": {
+						"async": "",
+						"src": "hello.js"
+					}
+				},
+				{
+					"tagName": "script",
+					"attributes": {
+						"async": "",
+						"src": "world.js"
+					}
+				}
+			]
+		}
+	]
+}
