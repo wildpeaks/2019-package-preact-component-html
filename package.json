@@ -1,0 +1,35 @@
+{
+  "name": "@wildpeaks/preact-component-html",
+  "version": "1.0.0",
+  "description": "HTML Preact component",
+  "main": "src/HTML.js",
+  "files": [
+    "src/HTML.js",
+    "test/HTML.tests.js"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "https://github.com/wildpeaks/package-preact-component-html",
+  "keywords": [
+    "wildpeaks",
+    "preact",
+    "component"
+  ],
+  "author": "Cecile Muller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wildpeaks/package-preact-component-html/issues"
+  },
+  "homepage": "https://github.com/wildpeaks/package-preact-component-html#readme",
+  "peerDependencies": {
+    "preact": "latest"
+  },
+  "devDependencies": {
+  	"jsdom": "latest",
+  	"mocha": "latest",
+  	"preact": "latest",
+  	"preact-render-to-string": "latest",
+    "@wildpeaks/snapshot-dom": "latest"
+  }
+}
