@@ -1,6 +1,4 @@
 {
-	"plugins": ["react"],
-	"extends": ["plugin:react/recommended"],
 	"env": {
 		"node": false,
 		"browser": false,
@@ -12,13 +10,11 @@
 		"ecmaFeatures": {
 			"arrowFunctions": true,
 			"templateStrings": true,
-			"jsx": true,
+			"jsx": false,
 			"experimentalObjectRestSpread": true
 		}
 	},
 	"rules": {
-		"react/prop-types": ["error", {"ignore": ["children"]}],
-
 		"no-cond-assign": ["error", "always"],
 		"no-console": 0,
 		"no-constant-condition": "error",
