@@ -1,14 +1,19 @@
 {
   "name": "@wildpeaks/preact-component-html",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "HTML Preact component",
   "main": "src/HTML.js",
   "files": [
     "src/HTML.js",
     "test/HTML.tests.js"
   ],
+  "eslintConfig": {
+    "extends": "@wildpeaks/commonjs"
+  },
   "scripts": {
-    "test": "mocha"
+    "test:eslint": "eslint src",
+    "test:mocha": "mocha",
+    "test": "npm run test:eslint && npm run test:mocha"
   },
   "repository": "https://github.com/wildpeaks/package-preact-component-html",
   "keywords": [
@@ -23,13 +28,15 @@
   },
   "homepage": "https://github.com/wildpeaks/package-preact-component-html#readme",
   "peerDependencies": {
-    "preact": "^7.1.0"
+    "preact": ">=7.1.0"
   },
   "devDependencies": {
-  	"jsdom": "^9.8.3",
-  	"mocha": "^3.2.0",
-  	"preact": "^7.1.0",
-  	"preact-render-to-string": "^3.3.0",
-    "@wildpeaks/snapshot-dom": "^1.2.1"
+    "eslint": "3.14.1",
+    "jsdom": "9.8.3",
+    "mocha": "3.2.0",
+    "preact": "7.1.0",
+    "preact-render-to-string": "3.3.0",
+    "@wildpeaks/eslint-config-commonjs": "1.1.0",
+    "@wildpeaks/snapshot-dom": "1.2.1"
   }
 }
