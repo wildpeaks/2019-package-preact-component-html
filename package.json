@@ -28,15 +28,15 @@
   },
   "homepage": "https://github.com/wildpeaks/package-preact-component-html#readme",
   "peerDependencies": {
-    "preact": ">=7.1.0"
+    "preact": "*"
   },
   "devDependencies": {
-    "eslint": "3.14.1",
-    "jsdom": "9.8.3",
-    "mocha": "3.2.0",
-    "preact": "7.1.0",
-    "preact-render-to-string": "3.3.0",
-    "@wildpeaks/eslint-config-commonjs": "1.1.0",
+    "eslint": "6.0.0",
+    "jsdom": "15.1.1",
+    "mocha": "6.1.4",
+    "preact": "8.4.2",
+    "preact-render-to-string": "4.1.0",
+    "@wildpeaks/eslint-config-commonjs": "5.2.0",
     "@wildpeaks/snapshot-dom": "1.2.1"
   }
 }
