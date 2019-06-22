@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const {deepStrictEqual} = require('assert');
-const {jsdom} = require('jsdom');
+const {JSDOM} = require('jsdom');
 const {h} = require('preact');
 const renderToStaticMarkup = require('preact-render-to-string');
 const {toJSON} = require('@wildpeaks/snapshot-dom');
@@ -14,7 +14,8 @@ const HTML = require('..');
 
 function actual(element){
 	const html = renderToStaticMarkup(element);
-	return toJSON(jsdom(html).defaultView.document.documentElement);
+	const dom = new JSDOM(html);
+	return toJSON(dom.window.document.documentElement);
 }
 
 function expected(filename){
