@@ -87,7 +87,7 @@ class HTML extends Component {
 			const l = children.length;
 			for (let i = 0; i < l; i++){
 				const child = children[i];
-				if ((typeof child === 'object') && (headTags.indexOf(child.nodeName) > -1)){
+				if ((typeof child === 'object') && (child !== null) && (headTags.indexOf(child.nodeName) > -1)){
 					headChildren.push(child);
 				} else {
 					bodyChildren.push(child);
