@@ -1,6 +1,6 @@
 # HTML Component
 
-[![Build Status](https://travis-ci.org/wildpeaks/package-preact-component-html.svg?branch=master)](https://travis-ci.org/wildpeaks/package-preact-component-html)
+[![Build Status](https://travis-ci.org/wildpeaks/package-preact-component-html.svg?branch=master)](https://travis-ci.org/wildpeaks/package-preact-component-html) [![Greenkeeper badge](https://badges.greenkeeper.io/wildpeaks/package-preact-component-html.svg)](https://greenkeeper.io/)
 
 Stateless HTML5 Preact component, useful for static rendering full pages.
 
