@@ -342,7 +342,7 @@ describe('@wildpeaks/preact-component-html', () => {
 	it('Lang: undefined', () => {
 		deepStrictEqual(
 			actual(h(HTML, {lang: undefined})),
-			expected('lang_empty.json')
+			expected('lang_default.json')
 		);
 	});
 
@@ -428,7 +428,7 @@ describe('@wildpeaks/preact-component-html', () => {
 	it('Viewport: undefined', () => {
 		deepStrictEqual(
 			actual(h(HTML, {viewport: undefined})),
-			expected('viewport_empty.json')
+			expected('viewport_default.json')
 		);
 	});
 

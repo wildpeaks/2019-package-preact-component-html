@@ -19,13 +19,6 @@
 						"content": "ie=edge",
 						"http-equiv": "x-ua-compatible"
 					}
-				},
-				{
-					"attributes": {
-						"content": "width=device-width, initial-scale=1, shrink-to-fit=no",
-						"name": "viewport"
-					},
-					"tagName": "meta"
 				}
 			]
 		},
