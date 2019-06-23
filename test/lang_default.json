@@ -1,5 +1,8 @@
 {
 	"tagName": "html",
+	"attributes": {
+		"lang": "en"
+	},
 	"childNodes": [
 		{
 			"tagName": "head",

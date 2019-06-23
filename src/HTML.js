@@ -34,7 +34,7 @@ function getAsyncStylesheet(url){
 
 class HTML extends Component {
 	render(){
-		const props = this.props;
+		const {props} = this;
 		const htmlProps = {};
 		if (typeof props.lang === 'string'){
 			const lang = props.lang.trim();
@@ -45,7 +45,7 @@ class HTML extends Component {
 
 		const headChildren = [
 			h('meta', {charset: 'utf-8'}),
-			h('meta', {'http-equiv': 'x-ua-compatible', content: 'ie=edge'})
+			h('meta', {'http-equiv': 'x-ua-compatible', 'content': 'ie=edge'})
 		];
 		if (typeof props.viewport === 'string'){
 			const viewport = props.viewport.trim();
@@ -81,13 +81,13 @@ class HTML extends Component {
 			);
 		}
 
-		const children = props.children;
+		const {children} = props;
 		const bodyChildren = [];
 		if (Array.isArray(children)){
 			const l = children.length;
 			for (let i = 0; i < l; i++){
 				const child = children[i];
-				if ((typeof child === 'object') && (headTags.indexOf(child.nodeName) > -1)){
+				if ((typeof child === 'object') && (child !== null) && (headTags.indexOf(child.nodeName) > -1)){
 					headChildren.push(child);
 				} else {
 					bodyChildren.push(child);
