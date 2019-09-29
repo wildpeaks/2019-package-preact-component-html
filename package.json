@@ -33,7 +33,7 @@
   "devDependencies": {
     "eslint": "6.5.0",
     "jsdom": "15.1.1",
-    "mocha": "6.2.0",
+    "mocha": "6.2.1",
     "preact": "8.5.2",
     "preact-render-to-string": "4.1.0",
     "@wildpeaks/eslint-config-commonjs": "7.0.0",
