@@ -477,7 +477,13 @@ describe('@wildpeaks/preact-component-html', () => {
 
 	it('Children: div', () => {
 		deepStrictEqual(
-			actual(h(HTML, null, h('div', {className: 'hello'}))),
+			actual(h(
+				HTML,
+				null,
+				[
+					h('div', {className: 'hello'})
+				]
+			)),
 			expected('children_single.json')
 		);
 	});
@@ -508,11 +514,11 @@ describe('@wildpeaks/preact-component-html', () => {
 	it('Children: div, meta, p, link, article', () => {
 		const div = h('div', {className: 'mydiv'});
 		const meta = h('meta', {content: 'hello'});
-		const p = h('p', null, 'Hello');
+		const p = h('p', null, ['Hello']);
 		const link = h('link', {rel: 'hello'});
 		const article = h('article', {className: 'myarticle'});
 		deepStrictEqual(
-			actual(h(HTML, null, div, meta, p, link, article)),
+			actual(h(HTML, null, [div, meta, p, link, article])),
 			expected('children_mixed.json')
 		);
 	});
