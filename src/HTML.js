@@ -1,5 +1,5 @@
 'use strict';
-const {Component, h} = require('preact');
+const {Component, h, toChildArray} = require('preact');
 const headTags = ['style', 'link', 'meta'];
 
 
@@ -13,22 +13,6 @@ function getAsyncScript(url){
 
 function getAsyncStylesheet(url){
 	return h('link', {rel: 'stylesheet', href: url});
-	// return h(
-	// 	'script',
-	// 	{async: true},
-	// 	`
-	// 		var xhr = new XMLHttpRequest();
-	// 		xhr.open('GET', ${JSON.stringify(url))}, true);
-	// 		xhr.onreadystatechange = function(){
-	// 			if ((xhr.readyState == 4) && (xhr.status == 200)){
-	// 				var style = document.h('style');
-	// 				style.innerHTML = xhr.responseText;
-	// 				document.head.appendChild(style);
-	// 			}
-	// 		};
-	// 		xhr.send();
-	// 	`
-	// );
 }
 
 
@@ -57,17 +41,17 @@ class HTML extends Component {
 		}
 		if ((typeof props.title === 'string') && (props.title.trim() !== '')){
 			headChildren.push(
-				h('title', null, props.title)
+				h('title', null, [props.title])
 			);
 		}
 		if (isValidString(props.css)){
 			headChildren.push(
-				h('style', null, props.css)
+				h('style', null, [props.css])
 			);
 		}
 		if (isValidString(props.js)){
 			headChildren.push(
-				h('script', null, props.js)
+				h('script', null, [props.js])
 			);
 		}
 		if (isValidString(props.favicon)){
@@ -81,13 +65,13 @@ class HTML extends Component {
 			);
 		}
 
-		const {children} = props;
+		const children = toChildArray(props.children);
 		const bodyChildren = [];
 		if (Array.isArray(children)){
 			const l = children.length;
 			for (let i = 0; i < l; i++){
 				const child = children[i];
-				if ((typeof child === 'object') && (child !== null) && (headTags.indexOf(child.nodeName) > -1)){
+				if ((typeof child === 'object') && (child !== null) && (headTags.indexOf(child.type) > -1)){
 					headChildren.push(child);
 				} else {
 					bodyChildren.push(child);
@@ -115,7 +99,7 @@ class HTML extends Component {
 
 		const head = h('head', null, headChildren);
 		const body = h('body', null, bodyChildren);
-		return h('html', htmlProps, head, body);
+		return h('html', htmlProps, [head, body]);
 	}
 }
 
