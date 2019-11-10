@@ -34,7 +34,7 @@
     "eslint": "6.6.0",
     "jsdom": "15.2.1",
     "mocha": "6.2.2",
-    "preact": "10.0.4",
+    "preact": "10.0.5",
     "preact-render-to-string": "5.1.1",
     "@wildpeaks/eslint-config-commonjs": "7.1.0",
     "@wildpeaks/snapshot-dom": "1.4.0"
