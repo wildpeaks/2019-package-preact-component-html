@@ -10,6 +10,12 @@
   "eslintConfig": {
     "extends": "@wildpeaks/commonjs"
   },
+  "greenkeeper": {
+    "commitMessages": {
+      "dependencyUpdate": "feat: update ${dependency}",
+      "devDependencyUpdate": "chore: update ${dependency}"
+    }
+  },
   "scripts": {
     "test:eslint": "eslint src",
     "test:mocha": "mocha",
@@ -34,9 +40,9 @@
     "eslint": "6.7.2",
     "jsdom": "15.2.1",
     "mocha": "6.2.2",
-    "preact": "10.0.5",
-    "preact-render-to-string": "5.1.1",
-    "@wildpeaks/eslint-config-commonjs": "7.2.0",
+    "preact": "10.1.0",
+    "preact-render-to-string": "5.1.2",
+    "@wildpeaks/eslint-config-commonjs": "7.3.0",
     "@wildpeaks/snapshot-dom": "1.4.0"
   }
 }
