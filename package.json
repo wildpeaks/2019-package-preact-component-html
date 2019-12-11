@@ -10,6 +10,12 @@
   "eslintConfig": {
     "extends": "@wildpeaks/commonjs"
   },
+  "greenkeeper": {
+    "commitMessages": {
+      "dependencyUpdate": "feat: update ${dependency}",
+      "devDependencyUpdate": "chore: update ${dependency}"
+    }
+  },
   "scripts": {
     "test:eslint": "eslint src",
     "test:mocha": "mocha",
