@@ -37,7 +37,7 @@
     "preact": "*"
   },
   "devDependencies": {
-    "eslint": "6.7.2",
+    "eslint": "6.8.0",
     "jsdom": "15.2.1",
     "mocha": "6.2.2",
     "preact": "10.1.1",
