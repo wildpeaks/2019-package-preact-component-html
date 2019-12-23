@@ -1,77 +1,63 @@
-'use strict';
-const {Component, h, toChildArray} = require('preact');
-const headTags = ['style', 'link', 'meta'];
+"use strict";
+const {Component, h, toChildArray} = require("preact");
+const headTags = ["style", "link", "meta"];
 
-
-function isValidString(text){
-	return (typeof text === 'string') && (text.trim() !== '');
+function isValidString(text) {
+	return typeof text === "string" && text.trim() !== "";
 }
 
-function getAsyncScript(url){
-	return h('script', {src: url, async: true});
+function getAsyncScript(url) {
+	return h("script", {src: url, async: true});
 }
 
-function getAsyncStylesheet(url){
-	return h('link', {rel: 'stylesheet', href: url});
+function getAsyncStylesheet(url) {
+	return h("link", {rel: "stylesheet", href: url});
 }
-
 
 class HTML extends Component {
-	render(){
+	render() {
 		const {props} = this;
 		const htmlProps = {};
-		if (typeof props.lang === 'string'){
+		if (typeof props.lang === "string") {
 			const lang = props.lang.trim();
-			if (lang !== ''){
+			if (lang !== "") {
 				htmlProps.lang = lang;
 			}
 		}
 
 		const headChildren = [
-			h('meta', {charset: 'utf-8'}),
-			h('meta', {'http-equiv': 'x-ua-compatible', 'content': 'ie=edge'})
+			h("meta", {charset: "utf-8"}),
+			h("meta", {"http-equiv": "x-ua-compatible", content: "ie=edge"})
 		];
-		if (typeof props.viewport === 'string'){
+		if (typeof props.viewport === "string") {
 			const viewport = props.viewport.trim();
-			if (viewport !== ''){
-				headChildren.push(
-					h('meta', {name: 'viewport', content: viewport})
-				);
+			if (viewport !== "") {
+				headChildren.push(h("meta", {name: "viewport", content: viewport}));
 			}
 		}
-		if ((typeof props.title === 'string') && (props.title.trim() !== '')){
-			headChildren.push(
-				h('title', null, [props.title])
-			);
+		if (typeof props.title === "string" && props.title.trim() !== "") {
+			headChildren.push(h("title", null, [props.title]));
 		}
-		if (isValidString(props.css)){
-			headChildren.push(
-				h('style', null, [props.css])
-			);
+		if (isValidString(props.css)) {
+			headChildren.push(h("style", null, [props.css]));
 		}
-		if (isValidString(props.js)){
-			headChildren.push(
-				h('script', null, [props.js])
-			);
+		if (isValidString(props.js)) {
+			headChildren.push(h("script", null, [props.js]));
 		}
-		if (isValidString(props.favicon)){
-			headChildren.push(
-				h('link', {rel: 'shortcut icon', href: props.favicon})
-			);
+		if (isValidString(props.favicon)) {
+			headChildren.push(h("link", {rel: "shortcut icon", href: props.favicon}));
 		}
-		if (isValidString(props.canonical)){
-			headChildren.push(
-				h('link', {rel: 'canonical', href: props.canonical})
-			);
+		if (isValidString(props.canonical)) {
+			headChildren.push(h("link", {rel: "canonical", href: props.canonical}));
 		}
 
 		const children = toChildArray(props.children);
 		const bodyChildren = [];
-		if (Array.isArray(children)){
+		if (Array.isArray(children)) {
 			const l = children.length;
-			for (let i = 0; i < l; i++){
+			for (let i = 0; i < l; i++) {
 				const child = children[i];
-				if ((typeof child === 'object') && (child !== null) && (headTags.indexOf(child.type) > -1)){
+				if (typeof child === "object" && child !== null && headTags.indexOf(child.type) > -1) {
 					headChildren.push(child);
 				} else {
 					bodyChildren.push(child);
@@ -81,39 +67,38 @@ class HTML extends Component {
 
 		const scripts = Array.isArray(props.scripts) ? props.scripts : [props.scripts];
 		const scriptsCount = scripts.length;
-		for (let i = 0; i < scriptsCount; i++){
+		for (let i = 0; i < scriptsCount; i++) {
 			const url = scripts[i];
-			if (isValidString(url)){
+			if (isValidString(url)) {
 				bodyChildren.push(getAsyncScript(url));
 			}
 		}
 
 		const stylesheets = Array.isArray(props.stylesheets) ? props.stylesheets : [props.stylesheets];
 		const stylesheetsCount = stylesheets.length;
-		for (let i = 0; i < stylesheetsCount; i++){
+		for (let i = 0; i < stylesheetsCount; i++) {
 			const url = stylesheets[i];
-			if (isValidString(url)){
+			if (isValidString(url)) {
 				bodyChildren.push(getAsyncStylesheet(url));
 			}
 		}
 
-		const head = h('head', null, headChildren);
-		const body = h('body', null, bodyChildren);
-		return h('html', htmlProps, [head, body]);
+		const head = h("head", null, headChildren);
+		const body = h("body", null, bodyChildren);
+		return h("html", htmlProps, [head, body]);
 	}
 }
 
 HTML.defaultProps = {
-	js: '',
-	css: '',
+	js: "",
+	css: "",
 	scripts: [],
 	stylesheets: [],
-	title: '',
-	lang: 'en',
-	favicon: '',
-	canonical: '',
-	viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+	title: "",
+	lang: "en",
+	favicon: "",
+	canonical: "",
+	viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
 };
-
 
 module.exports = HTML;
