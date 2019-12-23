@@ -19,7 +19,7 @@ function actual(element){
 }
 
 function expected(filename){
-	const filepath = path.join(__dirname, filename);
+	const filepath = path.join(__dirname, 'fixtures', filename);
 	return JSON.parse(fs.readFileSync(filepath, 'utf8'));
 }
 
