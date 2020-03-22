@@ -49,6 +49,6 @@
     "mocha": "7.1.1",
     "preact": "10.3.4",
     "preact-render-to-string": "5.1.4",
-    "prettier": "2.0.0"
+    "prettier": "2.0.1"
   }
 }
