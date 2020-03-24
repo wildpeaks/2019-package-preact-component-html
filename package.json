@@ -21,7 +21,8 @@
     "printWidth": 120,
     "tabWidth": 4,
     "useTabs": true,
-    "bracketSpacing": false
+    "bracketSpacing": false,
+    "trailingComma": "none"
   },
   "greenkeeper": {
     "commitMessages": {
@@ -42,13 +43,13 @@
     "preact": "*"
   },
   "devDependencies": {
-    "@wildpeaks/eslint-config-commonjs": "8.4.0",
+    "@wildpeaks/eslint-config-commonjs": "9.0.0",
     "@wildpeaks/snapshot-dom": "2.0.0",
     "eslint": "6.8.0",
     "jsdom": "16.2.1",
     "mocha": "7.1.1",
     "preact": "10.3.4",
     "preact-render-to-string": "5.1.4",
-    "prettier": "2.0.1"
+    "prettier": "2.0.2"
   }
 }
