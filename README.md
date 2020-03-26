@@ -1,6 +1,6 @@
 # HTML Component
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/wildpeaks/package-preact-component-html.svg)](https://greenkeeper.io/)
+
 
 Stateless HTML5 Preact component, useful for static rendering full pages.
 
