@@ -37,7 +37,7 @@
     "preact": "*"
   },
   "devDependencies": {
-    "@wildpeaks/eslint-config-commonjs": "9.0.0",
+    "@wildpeaks/eslint-config-commonjs": "9.1.0",
     "@wildpeaks/snapshot-dom": "2.0.0",
     "eslint": "6.8.0",
     "jsdom": "16.2.1",
