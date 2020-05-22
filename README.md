@@ -1,6 +1,6 @@
 # HTML Component
 
-
+![Github Release](https://img.shields.io/github/v/release/wildpeaks/package-preact-component-html.svg?label=Release&logo=github&logoColor=eceff4&colorA=4c566a&colorB=11abfb)
 
 Stateless HTML5 Preact component, useful for static rendering full pages.
 
