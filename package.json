@@ -26,12 +26,11 @@
   },
   "main": "src/HTML.js",
   "files": [
-    "src/HTML.js",
-    "test/HTML.tests.js"
+    "src"
   ],
   "scripts": {
     "lint": "eslint src",
-    "test": "mocha test/*.spec.js"
+    "test": "mocha test/*.test.js"
   },
   "peerDependencies": {
     "preact": "*"
