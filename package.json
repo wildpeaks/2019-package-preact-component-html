@@ -42,7 +42,7 @@
     "jsdom": "16.4.0",
     "mocha": "8.3.0",
     "preact": "10.5.12",
-    "preact-render-to-string": "5.1.12",
+    "preact-render-to-string": "5.1.19",
     "prettier": "2.2.1"
   }
 }
